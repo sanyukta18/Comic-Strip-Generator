@@ -1,0 +1,90 @@
+/* src/App.css */
+
+.App {
+  text-align: center;
+  max-width: 800px; /* Limit the width of the form */
+  margin: 0 auto; /* Center the app in the middle of the page */
+  padding: 20px;
+  font-family: "Arial", sans-serif; 
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-button-wrapper {
+  grid-column: 1 / -1; /* Span across all columns */
+  display: flex;
+  justify-content: center; /* This centers the button horizontally */
+}
+
+label {
+  text-align: right; /* Align text labels to the right */
+  padding-right: 10px; /* Space between labels and inputs */
+}
+
+input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+}
+
+button {
+  cursor: pointer;
+  background-color: #007bff; 
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease; 
+}
+
+button:hover {
+  background-color: #0056b3; /* Darken button on hover */
+}
+
+.comic-panel-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(150px, 1fr)
+  ); 
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.comic-panel-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Ensure images maintain their aspect ratio */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.generate-button {
+  grid-column: 1 / -1; /* Span the button from the first to the last column */
+  justify-self: center; /* Center the button horizontally in the grid area */
+  width: auto; /* Or set a specific width */
+  margin: 20px 0; /* Vertical margin, no horizontal margin */
+}
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  form {
+    grid-template-columns: 1fr; /* Stack labels and inputs on small screens */
+  }
+
+  label {
+    text-align: left;
+    padding-right: 0;
+  }
+}
